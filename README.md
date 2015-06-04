@@ -18,8 +18,10 @@ Ejecutar Grunt:
 
 Deploy Heroku
 
-Se debe agregar git remote add heroku git@heroku.com:appcarsharing-web.git
-
 		grunt build:dist
 		git push heroku master
+
+Se debe agregar primero el remote de heroku
+
+		git remote add heroku git@heroku.com:appcarsharing-web.git
 
