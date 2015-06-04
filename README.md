@@ -1,14 +1,25 @@
 ## App Car Sharing
 
-Aplication with components WEB.
+Aplicacion Web Car sharing
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.11.1.
+## Pruebas Locales.
 
-## Build & development
+Instalar dependecias de Node.js con:
 
-Run `grunt` for building and `grunt serve` for preview.
+		npm install
 
-## Testing
+Instalar dependencias Angular con:
 
-Running `grunt test` will run the unit tests with karma.
+ 		bower install
+
+Ejecutar Grunt:
+		
+		grunt serve
+
+Deploy Heroku
+
+Se debe agregar git remote add heroku git@heroku.com:appcarsharing-web.git
+
+		grunt build:dist
+		git push heroku master
+
