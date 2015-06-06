@@ -14,7 +14,7 @@ Instalar dependencias Angular con:
 
 Ejecutar Grunt:
 		
-		grunt serve
+		grunt serve --force
 
 Deploy Heroku
 
