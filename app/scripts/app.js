@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-angular
+var appCarSharingAppModule = angular
   .module('appCarSharingApp', [
     'ngAnimate',
     'ngCookies',
@@ -16,9 +16,21 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'ngCookies',
     'ui.bootstrap'
-  ])
-  .config(function ($routeProvider) {
+  ]);
+
+appCarSharingAppModule.factory('defaultInformation',
+		function($cookies, $location) {
+
+			return ({
+				setDefultInfo : function() {
+					$cookies.email = 'luismi@gmail.com';
+				}
+			});
+		});
+
+appCarSharingAppModule.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -32,3 +44,9 @@ angular
         redirectTo: '/'
       });
   });
+
+appCarSharingAppModule.run(function($rootScope, defaultInformation) {
+	$rootScope.$on('$routeChangeStart', function() {
+		defaultInformation.setDefultInfo();
+	});
+});
