@@ -6,6 +6,7 @@ var CARS_BY_USER = 'http://appcarsharing-api.heroku.com/rest/user/cars';
 
 var USER = 'http://appcarsharing-api.heroku.com/rest/user';
 
+var userEmail = 'luismi@gmail.com';
 /**
  * @ngdoc function
  * @name appCarSharingApp.controller:MainCtrl
@@ -34,26 +35,26 @@ appCarSharingAppModule.service('availableBrandsWebService', function($http) {
 });
 
 appCarSharingAppModule.service('carsByUserWebService', function($http) {
-	this.findAllAvailableBrands = function($cookies) {
+	this.findCarsByUser = function() {
 
 		return ($http({
 			method : 'GET',
 			url : CARS_BY_USER,
 			params : {
-				email : $cookies.email;
+				email : userEmail
 			}
 		}));
 	};
 });
 
 appCarSharingAppModule.service('addCarWebService', function($http) {
-	this.findAllAvailableBrand = function(carJSON, $cookies) {
+	this.addCar = function(carJSON) {
 
 		return ($http({
 			method : 'POST',
 			url : CARS,
 			params : {
-				email : $cookies.email;
+				email : userEmail
 			},
 			data : carJSON
 		}));

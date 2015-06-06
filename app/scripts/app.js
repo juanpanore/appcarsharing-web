@@ -16,8 +16,7 @@ var appCarSharingAppModule = angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ngCookies',
-    'ui.bootstrap'
+    'ngCookies'
   ]);
 
 appCarSharingAppModule.factory('defaultInformation',
@@ -30,7 +29,7 @@ appCarSharingAppModule.factory('defaultInformation',
 			});
 		});
 
-appCarSharingAppModule.config(function ($routeProvider) {
+appCarSharingAppModule.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -40,13 +39,18 @@ appCarSharingAppModule.config(function ($routeProvider) {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/cars', {
+        templateUrl: 'views/carlist.html',
+        controller: 'CarlistCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }]);
 
-appCarSharingAppModule.run(function($rootScope, defaultInformation) {
+appCarSharingAppModule.run(function($rootScope, defaultInformation, $location) {
 	$rootScope.$on('$routeChangeStart', function() {
 		defaultInformation.setDefultInfo();
+    $location.url('/cars');
 	});
 });
