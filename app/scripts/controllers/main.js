@@ -12,6 +12,8 @@ var USER = 'https://appcarsharing-api.herokuapp.com/rest/user';
 
 // var USER = 'http://localhost:8080/appcarsharing-api/rest/user';
 
+var userEmail = 'luismi@gmail.com';
+
 /**
  * @ngdoc function
  * @name appCarSharingApp.controller:MainCtrl
