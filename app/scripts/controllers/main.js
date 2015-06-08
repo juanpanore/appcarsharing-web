@@ -6,7 +6,12 @@ var CARS_BY_USER = 'https://appcarsharing-api.herokuapp.com/rest/user/cars';
 
 var USER = 'https://appcarsharing-api.herokuapp.com/rest/user';
 
-var userEmail = 'luismi@gmail.com';
+// var CARS_BY_USER = 'http://localhost:8080/appcarsharing-api/rest/user/cars';
+
+// var AVAILABLE_BRANDS ='http://localhost:8080/appcarsharing-api/rest/brand';
+
+// var USER = 'http://localhost:8080/appcarsharing-api/rest/user';
+
 /**
  * @ngdoc function
  * @name appCarSharingApp.controller:MainCtrl
