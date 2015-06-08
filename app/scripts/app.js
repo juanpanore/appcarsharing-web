@@ -48,9 +48,9 @@ appCarSharingAppModule.config(['$routeProvider', function ($routeProvider) {
       });
   }]);
 
-appCarSharingAppModule.run(function($rootScope, defaultInformation, $location) {
-	$rootScope.$on('$routeChangeStart', function() {
-		defaultInformation.setDefultInfo();
-    $location.url('/cars');
-	});
-});
+// appCarSharingAppModule.run(function($rootScope, defaultInformation, $location) {
+// 	$rootScope.$on('$routeChangeStart', function() {
+// 		defaultInformation.setDefultInfo();
+//     $location.url('/');
+// 	});
+

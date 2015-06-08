@@ -1,12 +1,21 @@
 'use strict';
 
-var AVAILABLE_BRANDS = 'http://appcarsharing-api.heroku.com/rest/brand';
+var AVAILABLE_BRANDS = 'https://appcarsharing-api.herokuapp.com/rest/brand';
 
-var CARS_BY_USER = 'http://appcarsharing-api.heroku.com/rest/user/cars';
+var CARS_BY_USER = 'https://appcarsharing-api.herokuapp.com/rest/user/cars';
 
-var USER = 'http://appcarsharing-api.heroku.com/rest/user';
+var USER = 'https://appcarsharing-api.herokuapp.com/rest/user';
+
+// var CARS_BY_USER = 'http://localhost:8080/appcarsharing-api/rest/user/cars';
+
+// var AVAILABLE_BRANDS ='http://localhost:8080/appcarsharing-api/rest/brand';
+
+// var USER = 'http://localhost:8080/appcarsharing-api/rest/user';
 
 var userEmail = 'luismi@gmail.com';
+
+
+	
 /**
  * @ngdoc function
  * @name appCarSharingApp.controller:CarlistCtrl
@@ -22,6 +31,14 @@ appCarSharingAppModule.controller('CarlistCtrl', function ($scope, carsByUserWeb
       'AngularJS',
       'Karma'
     ];
+    $scope.changeName = function changeName() {
+
+    	
+    	console.log(document.getElementById("login").value)
+    	return document.getElementById("login").value("Shared");
+    }
+    
+
 
     carsByUserWebService.findCarsByUser().success(function(data){
     	$scope.carlist = data;
@@ -65,7 +82,8 @@ appCarSharingAppModule.service('availableBrandsWebService', function($http) {
 
 		return ($http({
 			method : 'GET',
-			url : AVAILABLE_BRANDS
+			url : AVAILABLE_BRANDS,
+			
 		}));
 	};
 });
@@ -75,7 +93,8 @@ appCarSharingAppModule.service('carsByUserWebService', function($http) {
 		return ($http({
 			withCredentials: true,
 			method : 'GET',
-			url : CARS_BY_USER + '/' + userEmail
+			url : CARS_BY_USER + '/' + userEmail,
+			
 		}));
 	};
 });
@@ -86,7 +105,8 @@ appCarSharingAppModule.service('addCarWebService', function($http) {
 		return ($http({
 			method : 'POST',
 			url : CARS + '/' + userEmail,
-			data : carJSON
+			data : carJSON,
+			
 		}));
 	};
 });

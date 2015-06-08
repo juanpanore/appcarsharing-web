@@ -1,0 +1,91 @@
+<br />
+	<form class="form-horizontal" name="carsListForm" role="form">
+		<div class="container">
+			<div>
+				<h1 style="text-align: center;">Agregar Nuevo Carro</h1>
+				<br />
+					<div class="col-lg-2" style="background-color: lavender; 
+						text-align: center;">
+						<div class="input-group">
+							<span class="input-group-addon"> 
+								<label class="control-label">Placa: </label> 
+								<input class="form-control" type="text" 
+									ng-model="carriagePlate" />
+							</span>
+						</div>
+					</div>
+					<div class="col-lg-2" style="background-color: lavender; 
+						text-align: center;">
+						<div class="input-group">
+							<span class="input-group-addon"> 
+								<label class="control-label">Marca: </label> 
+								<select ng-model="brand" >
+									<option ng-repeat="brand in brandlist">
+								</select>
+							</span>
+						</div>
+					</div>
+					<div class="col-lg-2" style="background-color: lavender; 
+						text-align: center;">
+						<div class="input-group">
+							<span class="input-group-addon"> 
+								<label class="control-label">Modelo: </label> 
+								<input class="form-control" type="text" 
+									ng-model="model" />
+							</span>
+						</div>
+					</div>
+					<div class="col-lg-2" style="background-color: lavender; 
+						text-align: center;">
+						<div class="input-group">
+							<span class="input-group-addon"> 
+								<label class="control-label">Color: </label> 
+								<input class="form-control" type="text"
+									ng-model="color" />
+							</span>
+						</div>
+					</div>
+					<div class="col-lg-2" style="background-color: lavender; 
+						text-align: center;">
+						<div class="input-group">
+							<span class="input-group-addon"> 
+								<label class="control-label">Capacidad: </label> 
+								<input class="form-control" type="number" 
+									ng-model="capacity" />
+							</span>
+						</div>
+					</div>
+					<button class="btn btn-success" type="button" 
+							ng-click="addCar()">
+						<span class="glyphicon glyphicon-save"></span> Agregar
+					</button>
+				</div>
+			</div>
+			<br/>
+			<div>
+				<spacer type="block" width="50" />
+				<h1 style="text-align: center;">Lista de Carros</h1>
+				<br />
+				<table class="table table-striped" style="text-align: center;">
+					<thead>
+						<tr>
+							<th style="text-align: center;">Placa</th>
+							<th style="text-align: center;">Marca</th>
+							<th style="text-align: center;">Modelo</th>
+							<th style="text-align: center;">Color</th>
+							<th style="text-align: center;">Capacidad</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="car in carlist">
+							<td>{{car.carriagePlate}}</td>
+							<td>{{car.brand.brand}}</td>
+							<td>{{car.model}}</td>
+							<td>{{car.color}}</td>
+							<td>{{car.capacity}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</form>

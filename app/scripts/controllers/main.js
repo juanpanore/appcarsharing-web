@@ -1,10 +1,10 @@
 'use strict';
 
-var AVAILABLE_BRANDS = 'http://appcarsharing-api.heroku.com/rest/brand';
+var AVAILABLE_BRANDS = 'https://appcarsharing-api.herokuapp.com/rest/brand';
 
-var CARS_BY_USER = 'http://appcarsharing-api.heroku.com/rest/user/cars';
+var CARS_BY_USER = 'https://appcarsharing-api.herokuapp.com/rest/user/cars';
 
-var USER = 'http://appcarsharing-api.heroku.com/rest/user';
+var USER = 'https://appcarsharing-api.herokuapp.com/rest/user';
 
 var userEmail = 'luismi@gmail.com';
 /**
