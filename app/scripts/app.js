@@ -43,6 +43,10 @@ appCarSharingAppModule.config(['$routeProvider', function ($routeProvider) {
         templateUrl: 'views/carlist.html',
         controller: 'CarlistCtrl'
       })
+      .when('/singup', {
+        templateUrl: 'views/singup.html',
+        controller: 'SingUpCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
