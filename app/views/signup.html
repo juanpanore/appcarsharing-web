@@ -48,7 +48,7 @@
 						<span class="input-group-addon"  id="sandbox-container" style="width:100%"> 
 							<label class="control-label">Fecha de Nacimiento: </label> 	
 							<div class="input-group date" style="width:100%">
-	               				<input style="text-align: center;" type="text" class="form-control" ng-model="birthDate" placeholder="(DD/MM/AAAA)">
+	               				<input style="text-align: center;" type="text" class="form-control" ng-model="birthDate" placeholder="(AAAA-MM-DD)">
 	               				<span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
 	           				</div>
            				</span>
@@ -56,7 +56,7 @@
         			 <script type="text/javascript">
 			            $(function() {
 			                $('#sandbox-container .input-group.date').datepicker({
-			                    format: "dd/mm/yyyy",
+			                    format: "yyyy-mm-dd",
 			                    clearBtn: true,
 			                    language: "es",
 			                    autoclose: true,

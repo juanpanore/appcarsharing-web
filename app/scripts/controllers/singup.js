@@ -1,6 +1,6 @@
 'use strict';
 
-var SAVE_USER_URL = 'https://appcarsharing-api.herokuapp.com/rest/user';
+var SAVE_USER_URL = 'http://localhost:8080/appcarsharing-api/rest/user';
 
 // var CARS_BY_USER = 'http://localhost:8080/appcarsharing-api/rest/user/cars';
 
@@ -52,12 +52,14 @@ appCarSharingAppModule.controller('SignUpCtrl', function ($scope, $http, saveUse
 											function(data, status){
 												if(status == 200){
 													alert('El usuario ha sido guardado exitosamente.');
+													clearData();
 												}else{
 													alert('No ha sido posible guardar el usuario.');
 												}
 											});
 		    }
-    	}			
+    	}
+    	$scope.password=''; 		
 	};
 	
 	function clearData(){
