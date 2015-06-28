@@ -1,0 +1,88 @@
+<br />
+<center>
+    <form name="addressForm" role="form">
+        <div class="panel panel-default" style="width: 80%">
+            <div class="panel-heading">
+                <h3 class="panel-title">Creaci&oacute;n de Evento</h3>
+            </div>
+            <div class="panel-body">
+                <div style="width: 80%">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon">Carro *</div>
+                            <div>
+                                <select ng-model="car" class="form-control" required="required" ng-options="c.model + ' - ' + c.brand.brand + ' - ' + c.color for c in carList"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon">Precio *</div>
+                            <div>
+                                <input class="form-control" type="number" ng-model="price" required="required" min="500" placeholder="Valor en pesos colombianos" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon">Fecha *</div>
+                            <div id="sandbox-container" style="width: 100%">
+                                <div class="input-group date">
+                                    <input type="text" class="form-control" ng-model="eventDate" placeholder="dd/mm/aaaa"><span class="input-group-addon"><i
+										class="glyphicon glyphicon-th"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Hora *</h3>
+                            </div>
+                            <div class="panel-body">
+                                <timepicker ng-model="time" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">Origen *</div>
+                                <div>
+                                    <input type="text" class="form-control" required="required" placeholder="Direcci&oacute;n de Origen" ng-model="source" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">Destino *</div>
+                                <div>
+                                    <input type="text" class="form-control" required="required" placeholder="Direcci&oacute;n de Destino" ng-model="target" />
+                                </div>
+                            </div>
+                        </div>
+                        <p style="text-align: center; color: gray; font-size: 12px;">Recuerde pintar las direcciones antes de crear el evento y por cada vez que las cambie.</p>
+                        <br />
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <button type="button" ng-click="showMarkers()" class="btn btn-primary">Pintar Direcciones</button>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <button type="button" ng-click="createEvent()" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-floppy-disk"></span> Crear Evento
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <div class="map_container">
+                    <div id="map" class="map"></div>
+                </div>
+            </div>
+    </form>
+</center>
+<br />
+<br />

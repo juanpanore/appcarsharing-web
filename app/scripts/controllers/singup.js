@@ -1,12 +1,8 @@
 'use strict';
 
-var SAVE_USER_URL = 'http://localhost:8080/appcarsharing-api/rest/user';
+var SAVE_USER_URL = 'https://appcarsharing-api.herokuapp.com/rest/user';
 
-// var CARS_BY_USER = 'http://localhost:8080/appcarsharing-api/rest/user/cars';
-
-// var AVAILABLE_BRANDS ='http://localhost:8080/appcarsharing-api/rest/brand';
-
-// var USER = 'http://localhost:8080/appcarsharing-api/rest/user';
+//var SAVE_USER_URL = 'http://localhost:8080/appcarsharing-api/rest/user';
 
 var userEmail = '';
 

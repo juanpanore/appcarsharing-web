@@ -9,52 +9,57 @@
  * Main module of the application.
  */
 var appCarSharingAppModule = angular
-  .module('appCarSharingApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch',
-    'ngCookies'
-  ]);
+    .module('appCarSharingApp', [
+        'ngAnimate',
+        'ngCookies',
+        'ngResource',
+        'ngRoute',
+        'ngSanitize',
+        'ngTouch',
+        'ngCookies',
+        'ui.bootstrap'
+    ]);
 
 appCarSharingAppModule.factory('defaultInformation',
-		function($cookies, $location) {
+    function($cookies, $location) {
 
-			return ({
-				setDefultInfo : function() {
-					$cookies.email = 'luismi@gmail.com';
-				}
-			});
-		});
+        return ({
+            setDefultInfo: function() {
+                $cookies.email = 'luismi@gmail.com';
+            }
+        });
+    });
 
-appCarSharingAppModule.config(['$routeProvider', function ($routeProvider) {
+appCarSharingAppModule.config(['$routeProvider', function($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .when('/cars', {
-        templateUrl: 'views/carlist.html',
-        controller: 'CarlistCtrl'
-      })
-      .when('/signup', {
-        templateUrl: 'views/signup.html',
-        controller: 'SignUpCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  }]);
+        .when('/', {
+            templateUrl: 'views/main.html',
+            controller: 'MainCtrl'
+        })
+        .when('/about', {
+            templateUrl: 'views/about.html',
+            controller: 'AboutCtrl'
+        })
+        .when('/cars', {
+            templateUrl: 'views/carlist.html',
+            controller: 'CarlistCtrl'
+        })
+        .when('/signup', {
+            templateUrl: 'views/signup.html',
+            controller: 'SignUpCtrl'
+        }).when('/eventcreation', {
+            templateUrl: 'views/eventcreation.html',
+            controller: 'EventCreationCtrl'
+        }).when('/joinevent', {
+            templateUrl: 'views/joinevent.html',
+            controller: 'JoinEventCtrl'
+        }).otherwise({
+            redirectTo: '/'
+        });
+}]);
 
 // appCarSharingAppModule.run(function($rootScope, defaultInformation, $location) {
-// 	$rootScope.$on('$routeChangeStart', function() {
-// 		defaultInformation.setDefultInfo();
+//  $rootScope.$on('$routeChangeStart', function() {
+//    defaultInformation.setDefultInfo();
 //     $location.url('/');
-// 	});
-
+//  });

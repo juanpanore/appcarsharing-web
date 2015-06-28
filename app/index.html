@@ -1,6 +1,7 @@
 <!doctype html>
 <html class="no-js">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Car Sharing</title>
     <meta name="description" content="">
@@ -23,130 +24,128 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="./styles/googlemaps.css">
+</head>
 
-     
-  </head>
-  <body ng-app="appCarSharingApp">
-
+<body ng-app="appCarSharingApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
     <!-- Add your site or application content here -->
-  <div class="header">
-
-  <div class="container">
-    <div class="row">
-        <div class="col-md-9">
-          <a  href="info" title="CarSharin">
-            <img  src="images/logo.jpeg"  width="40" height="40"class="img-circle">
-          </a>
-          <a href="#/">
-            <div class="btn">
-              <h4>Car Sharing</h4>
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <a href="info" title="CarSharing">
+                        <img src="images/logo.jpeg" width="40" height="40" class="img-circle">
+                    </a>
+                    <a href="#/">
+                        <div class="btn">
+                            <h4>Car Sharing</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-1">
+                    <div class="btn">
+                        <a ng-href="#/login" id="login">
+                            <h4>Iniciar</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="btn">
+                        <a ng-href="#/signup" id="signUp">
+                            <h4>Registro</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="btn">
+                        <a ng-href="#/cars" id="getstarted">
+                            <h4>Vehículos</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="btn">
+                        <a ng-href="#/eventcreation" id="eventCreation">
+                            <h4>Crear Viaje</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="btn">
+                        <a ng-href="#/joinevent" id="joinEvent">
+                            <h4>Unirse a Viaje</h4>
+                        </a>
+                    </div>
+                </div>
             </div>
-          </a>
-        </div>
-        <div class="col-md-1">
-          <div class="btn">
-            <a ng-href="#/login" id="login">
-              <h4>Iniciar</h4>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-1">           
-          <div class="btn">
-            <a ng-href="#/signup" id="signUp">
-              <h4>Registro</h4>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-1"> 
-          <div class="btn" >   
-            <a ng-href="#/cars" id="getstarted">      
-              <h4>Vehículos</h4>  
-            </a>  
-          </div>           
         </div>
     </div>
-  </div>
-        
-      </div>
-      </div>
     </div>
-
+    </div>
     <div ng-view=""></div>
-  
-
-   <div class="footer"><!--Inicio footer-->
-  
-      <div class="container">
-    <div class="row">
-      <div class="col-md-1" ng-href="#/about"></div>
-      <div class="col-md-2">
-        <a ng-href="#/about">Seguridad</a>
-      </div>
-      <div class="col-md-2">
-        <a ng-href="#/about">Política de privacidad</a>
-      </div>
-      <div class="col-md-2">
-         <a ng-href="#/about">Condiciones de uso</a>
-      </div>
-      <div class="col-md-2">
-         <a ng-href="#/about">Contáctenos</a>
-      </div>
-      <div class="col-md-2">
-        <a ng-href="#/about">¿Quiénes somos?</a>
-      </div>
-     
-   </div>
-   <br>
-   <div class="row">
-      <p align="center">
-             <strong>CAR SHARING</strong><br>
-
-              <strong>Univesidad de Antioquia</strong><br>
-              Medellín, Antioquia, Colombia.
-              <br>
-              Es recomendable usar Internet Explorer 8.0 o superior. Google Chrome o Firefoz en una resolución de 1024 x 768 o superior.
-              <br>
-              We recommend using Internet Explorer 8.0 or 9.0, Chrome, Firefox at a resolution of 1024 x 768 or higher. 
-      </p>
+    <div class="footer">
+        <!--Inicio footer-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1" ng-href="#/about"></div>
+                <div class="col-md-2">
+                    <a ng-href="#/about">Seguridad</a>
+                </div>
+                <div class="col-md-2">
+                    <a ng-href="#/about">Política de privacidad</a>
+                </div>
+                <div class="col-md-2">
+                    <a ng-href="#/about">Condiciones de uso</a>
+                </div>
+                <div class="col-md-2">
+                    <a ng-href="#/about">Contáctenos</a>
+                </div>
+                <div class="col-md-2">
+                    <a ng-href="#/about">¿Quiénes somos?</a>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <p align="center">
+                    <strong>CAR SHARING</strong>
+                    <br>
+                    <strong>Univesidad de Antioquia</strong>
+                    <br> Medellín, Antioquia, Colombia.
+                    <br> Es recomendable usar Internet Explorer 8.0 o superior. Google Chrome o Firefoz en una resolución de 1024 x 768 o superior.
+                    <br> We recommend using Internet Explorer 8.0 or 9.0, Chrome, Firefox at a resolution of 1024 x 768 or higher.
+                </p>
+            </div>
+            <br>
+            <div class="row" align="center">
+                <div class="redesSocialesFooter">
+                    <div class="iconosRedes">
+                        <a href="" target="_blank" title="Facebook"><img src="images/ico-facebook.png"></a>
+                        <a href="" target="_blank" title="Twitter"> <img src="images/ico-twitter.png"></a>
+                        <a href="" target="_blank" title="Youtube"><img src="images/ico-youtube.png"></a>
+                    </div>
+                    <div class="texto-copy">Copyright © 2015 CAR SHARING</div>
+                </div>
+            </div>
+        </div>
     </div>
-    <br>
-     <div class="row" align="center">
-          
-        <div class="redesSocialesFooter">
-            <div class="iconosRedes">
-            <a href="" target="_blank" title="Facebook"><img src="images/ico-facebook.png"></a>
-            <a href="" target="_blank" title="Twitter"> <img src="images/ico-twitter.png"></a>
-             <a href="" target="_blank" title="Youtube"><img src="images/ico-youtube.png"></a>
-        </div>
-          <div class="texto-copy">Copyright © 2014 CAR SHARING</div>
-        </div>
-      </div>
-   </div>
+    </div>
+    </div>
+    </div>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+    ! function(A, n, g, u, l, a, r) {
+        A.GoogleAnalyticsObject = l, A[l] = A[l] || function() {
+                (A[l].q = A[l].q || []).push(arguments)
+            }, A[l].l = +new Date, a = n.createElement(g),
+            r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+    }(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
- </div>
-  
-  </div>
-  </div>
-  
-  
-  
-  
-</div>
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
     </script>
-
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -163,15 +162,18 @@
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="./src/datepicker/js/bootstrap-datepicker.min.js"></script>
     <script src="./src/datepicker/locales/bootstrap-datepicker.es.min.js"></script>
-
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/cars.js"></script>
-        <script src="scripts/controllers/singup.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js" charset="UTF-8"></script>
+    <script src="scripts/controllers/about.js" charset="UTF-8"></script>
+    <script src="scripts/controllers/cars.js" charset="UTF-8"></script>
+    <script src="scripts/controllers/singup.js" charset="UTF-8"></script>
+    <script src="scripts/controllers/eventcreation.js" charset="UTF-8"></script>
+    <script src="scripts/controllers/joinevent.js" charset="UTF-8"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="./src/ui-bootstrap/ui-bootstrap-tpls-0.13.0.min.js"></script>
     <!-- endbuild -->
-
+    <!-- endbuild -->
 </body>
+
 </html>
