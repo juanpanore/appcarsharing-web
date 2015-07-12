@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="styles/shared.css">
     <link rel="stylesheet" type="text/css" href="./styles/googlemaps.css">
      
-  </head>
+</head>
 
 
 
@@ -43,7 +43,7 @@
           <div class="container" ng-controller="MainCtrl">
             <div class="row">
                   
-                <div class="col-md-9">
+                <div class="col-md-6">
                   <a  href="info" title="CarSharin">
                       <img  src="images/logo.jpeg"  width="40" height="40"class="img-circle">
                   </a>
@@ -53,52 +53,39 @@
                   </div>
                   </a>
                 </div>
-                 <div class="col-md-1">
-                    <div class="btn">
-                        <a ng-href="#/login" id="login">
-                            <h4>Iniciar</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-1">
-                    <div class="btn">
-                        <a ng-href="#/signup" id="signUp">
-                            <h4>Registro</h4>
-                        </a>
-                    </div>
-                </div>
+            
                 <div class="col-md-1">
                     <div class="btn">
                         <a ng-href="#/cars" id="getstarted">
-                            <h4>Vehículos</h4>
+                            <h4>Carros</h4>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-1">
                     <div class="btn">
                         <a ng-href="#/eventcreation" id="eventCreation">
-                            <h4>Crear Viaje</h4>
+                            <h4>Comparte</h4>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-1">
                     <div class="btn">
                         <a ng-href="#/joinevent" id="joinEvent">
-                            <h4>Unirse a Viaje</h4>
+                            <h4>Unete</h4>
                         </a>
                     </div>
                 </div>
-
+            
                 <div class="col-md-1">
-                    <a ng-href="#/shared">
+                    <a ng-href="#/joinevent">
                       <div class="btn" ng-click="show()">
                           <h4>{{firtsOpc}}</h4>
                         </div>
                       </a>
                 </div>
                 <div class="col-md-2"> 
-                <div class="btn" >   
-                    <a ng-href="#/cars" ng-click="show()">      
+                  <div class="btn" >   
+                    <a ng-href="#/signup" ng-click="show()">      
                           <h4 >{{secondOpc}}</h4>  
                     </a>  
                  </div>           
@@ -106,7 +93,6 @@
                   
             </div>
           </div>
-        
       </div>
     <div ng-view=""></div>
     <div class="footer">
@@ -154,9 +140,8 @@
             </div>
         </div>
     </div>
-    </div>
-    </div>
-    </div>
+
+   
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
     ! function(A, n, g, u, l, a, r) {

@@ -1,8 +1,8 @@
 'use strict';
 
-var AVAILABLE_EVENTS = 'https://appcarsharing-api.herokuapp.com/rest/event/all';
-var AVAILABLE_USERS = 'https://appcarsharing-api.herokuapp.com/rest/user';
-var JOIN_EVENT = 'https://appcarsharing-api.herokuapp.com/rest/event/partner/';
+ var AVAILABLE_EVENTS = 'https://appcarsharing-api.herokuapp.com/rest/event/all';
+ var AVAILABLE_USERS = 'https://appcarsharing-api.herokuapp.com/rest/user';
+ var JOIN_EVENT = 'https://appcarsharing-api.herokuapp.com/rest/event/partner/';
 
 //var AVAILABLE_EVENTS = 'http://localhost:8080/appcarsharing-api/rest/event/all';
 //var AVAILABLE_USERS = 'http://localhost:8080/appcarsharing-api/rest/user';

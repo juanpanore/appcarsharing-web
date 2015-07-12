@@ -1,7 +1,7 @@
 'use strict';
 
-var CARS_BY_USER = 'https://appcarsharing-api.herokuapp.com/rest/user/cars';
-var EVENT_CREATION = 'https://appcarsharing-api.herokuapp.com/rest/event';
+ var CARS_BY_USER = 'https://appcarsharing-api.herokuapp.com/rest/user/cars';
+ var EVENT_CREATION = 'https://appcarsharing-api.herokuapp.com/rest/event';
 
 //var CARS_BY_USER = 'http://localhost:8080/appcarsharing-api/rest/user/cars';
 //var EVENT_CREATION = 'http://localhost:8080/appcarsharing-api/rest/event';
