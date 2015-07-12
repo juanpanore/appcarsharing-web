@@ -1,0 +1,77 @@
+<br />
+<center>
+    <form name="addressForm" role="form">
+        <div class="panel panel-default" style="width: 80%">
+            <div class="panel-heading">
+                <h3 class="panel-title">Unirse a Evento</h3>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td><b>Creador</b></td>
+                                <td>{{event.author.name}} {{event.author.lastName}} - {{event.author.email}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Fecha y hora</b></td>
+                                <td>{{eventDate}}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Precio</b></td>
+                                <td>$ {{event.value}}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Carro</b></td>
+                                <td>
+                                    <div class="table-responsive">
+                                        <table>
+                                            <tr>
+                                                <td>{{event.car.model}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>{{event.car.brand.brand}} - {{event.car.carriagePlate}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>{{event.car.color}} - Capacidad: {{event.car.capacity}}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Cantidad de personas unidas</b></td>
+                                <td>{{event.amountPeople}} acompa&ntilde;ante(s)</td>
+                            </tr>
+                            <tr>
+                                <td><b>Origen</b></td>
+                                <td>{{event.source.description}}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Destino</b></td>
+                                <td>{{event.target.description}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <button type="button" ng-click="join()" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-send"></span> Unirse
+                        </button>
+                    </div>
+                </div>
+                <div style="width: 100%">
+                    <div class="map_container">
+                        <div id="map" class="map"></div>
+                    </div>
+                </div>
+            </div>
+    </form>
+    <p style="text-align: center; color: gray; font-size: 12px;">{{user.name}} {{user.lastName}} ({{user.email}})</p>
+</center>
+<br />
+<br />
