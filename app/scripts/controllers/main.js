@@ -1,19 +1,20 @@
 'use strict';
 
-var AVAILABLE_BRANDS = 'https://appcarsharing-api.herokuapp.com/rest/brand';
+// var AVAILABLE_BRANDS = 'https://appcarsharing-api.herokuapp.com/rest/brand';
 
-var CARS_BY_USER = 'https://appcarsharing-api.herokuapp.com/rest/user/cars';
+// var CARS_BY_USER = 'https://appcarsharing-api.herokuapp.com/rest/user/cars';
 
-var USER = 'https://appcarsharing-api.herokuapp.com/rest/user';
+// var USER = 'https://appcarsharing-api.herokuapp.com/rest/user';
 
-// var CARS_BY_USER = 'http://localhost:8080/appcarsharing-api/rest/user/cars';
+var CARS_BY_USER = 'http://localhost:8080/appcarsharing-api/rest/user/cars';
 
-// var AVAILABLE_BRANDS ='http://localhost:8080/appcarsharing-api/rest/brand';
+var AVAILABLE_BRANDS ='http://localhost:8080/appcarsharing-api/rest/brand';
 
-// var USER = 'http://localhost:8080/appcarsharing-api/rest/user';
+var USER = 'http://localhost:8080/appcarsharing-api/rest/user';
 
 var userEmail = 'luismi@gmail.com';
 
+var item = "Get Started";
 /**
  * @ngdoc function
  * @name appCarSharingApp.controller:MainCtrl
@@ -29,6 +30,17 @@ appCarSharingAppModule.controller('MainCtrl', function ($scope) {
       'AngularJS',
       'Karma'
     ];
+    $scope.firtsOpc = "Login";
+    $scope.secondOpc = "Get Started";
+
+    $scope.show = function() {
+
+    	
+        		$scope.firtsOpc = "Shared";
+        		$scope.secondOpc = "Share";
+    //	 target.data = "Shared"
+   // 	return document.getElementById("Shared").value("Shared");
+    };
   });
 
 appCarSharingAppModule.service('availableBrandsWebService', function($http) {

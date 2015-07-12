@@ -39,8 +39,8 @@ appCarSharingAppModule.config(['$routeProvider', function ($routeProvider) {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
-      .when('/cars', {
-        templateUrl: 'views/carlist.html',
+      .when('/shared', {
+        templateUrl: 'views/shared.html',
         controller: 'CarlistCtrl'
       })
       .otherwise({
