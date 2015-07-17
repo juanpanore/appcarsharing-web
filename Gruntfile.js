@@ -395,8 +395,7 @@ module.exports = function (grunt) {
     'copy:dist',
     'cdnify',
     'cssmin',
-    'uglify',
-    'usemin',
+    'uglify'
   ]);
 
   grunt.registerTask('default', [
