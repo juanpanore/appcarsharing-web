@@ -17,7 +17,8 @@ var appCarSharingAppModule = angular
         'ngSanitize',
         'ngTouch',
         'ngCookies',
-        'ui.bootstrap'
+        'ui.bootstrap',
+        'ng-bootstrap-datepicker'
     ]);
 
 appCarSharingAppModule.factory('defaultInformation',
@@ -36,10 +37,6 @@ appCarSharingAppModule.config(['$routeProvider', function($routeProvider) {
         .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
-        })
-        .when('/shared', {
-        templateUrl: 'views/shared.html',
-        controller: 'CarlistCtrl'
         })
         .when('/', {
             templateUrl: 'views/main.html',

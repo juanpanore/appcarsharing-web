@@ -7,81 +7,92 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
+    <link rel="stylesheet" href="styles/vendor.css">
     <!-- build:css(.tmp) styles/main.css -->
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="./src/datepicker/js/bootstrap-datepicker.min.js"></script>
+    <!--<script src="./src/datepicker/js/bootstrap-datepicker.min.js"></script>
     <script src="./src/datepicker/locales/bootstrap-datepicker.es.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./src/datepicker/css/bootstrap-datepicker.css">
     <link rel="stylesheet" type="text/css" href="./src/datepicker/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" type="text/css" href="./src/datepicker/css/bootstrap-datepicker.standalone.css">
-    <link rel="stylesheet" type="text/css" href="./src/datepicker/css/bootstrap-datepicker.standalone.min.css">
+    <link rel="stylesheet" type="text/css" href="./src/datepicker/css/bootstrap-datepicker.standalone.min.css">-->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" type="text/css" href="./styles/googlemaps.css">
+
+    <link rel="stylesheet" href="styles/shared.css">
+    <link rel="stylesheet" type="text/css" href="styles/googlemaps.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-bootstrap-datepicker/dist/angular-bootstrap-datepicker.css">
+     
 </head>
+
+
 
 <body ng-app="appCarSharingApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <!-- Add your site or application content here -->
-    <div class="header">
-        <div class="container">
+
+  <div class="header">
+
+          <div class="container" ng-controller="MainCtrl">
             <div class="row">
-                <div class="col-md-7">
-                    <a href="info" title="CarSharing">
-                        <img src="images/logo.jpeg" width="40" height="40" class="img-circle">
-                    </a>
-                    <a href="#/">
-                        <div class="btn">
-                            <h4>Car Sharing</h4>
-                        </div>
-                    </a>
+                  
+                <div class="col-md-6">
+                  <a  href="info" title="CarSharin">
+                      <img  src="images/logo.jpeg"  width="40" height="40"class="img-circle">
+                  </a>
+                  <a href="#/">
+                  <div class="btn">
+                      <h4>Car Sharing</h4>
+                  </div>
+                  </a>
                 </div>
-                <div class="col-md-1">
-                    <div class="btn">
-                        <a ng-href="#/login" id="login">
-                            <h4>Iniciar</h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-1">
-                    <div class="btn">
-                        <a ng-href="#/signup" id="signUp">
-                            <h4>Registro</h4>
-                        </a>
-                    </div>
-                </div>
+            
                 <div class="col-md-1">
                     <div class="btn">
                         <a ng-href="#/cars" id="getstarted">
-                            <h4>Vehículos</h4>
+                            <h4>Carros</h4>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-1">
                     <div class="btn">
                         <a ng-href="#/eventcreation" id="eventCreation">
-                            <h4>Crear Viaje</h4>
+                            <h4>Comparte</h4>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-1">
                     <div class="btn">
                         <a ng-href="#/joinevent" id="joinEvent">
-                            <h4>Unirse a Viaje</h4>
+                            <h4>Unete</h4>
                         </a>
                     </div>
                 </div>
+            
+                <div class="col-md-1">
+                    <a ng-href="#/joinevent">
+                      <div class="btn" ng-click="show()">
+                          <h4>{{firtsOpc}}</h4>
+                        </div>
+                      </a>
+                </div>
+                <div class="col-md-2"> 
+                  <div class="btn" >   
+                    <a ng-href="#/signup" ng-click="show()">      
+                          <h4 >{{secondOpc}}</h4>  
+                    </a>  
+                 </div>           
+                </div>
+                  
             </div>
-        </div>
-    </div>
-    </div>
-    </div>
+          </div>
+      </div>
     <div ng-view=""></div>
     <div class="footer">
         <!--Inicio footer-->
@@ -111,7 +122,7 @@
                     <br>
                     <strong>Univesidad de Antioquia</strong>
                     <br> Medellín, Antioquia, Colombia.
-                    <br> Es recomendable usar Internet Explorer 8.0 o superior. Google Chrome o Firefoz en una resolución de 1024 x 768 o superior.
+                    <br> Es recomendable usar Google Chrome o Firefoz en una resolución de 1024 x 768 o superior.
                     <br> We recommend using Internet Explorer 8.0 or 9.0, Chrome, Firefox at a resolution of 1024 x 768 or higher.
                 </p>
             </div>
@@ -128,9 +139,8 @@
             </div>
         </div>
     </div>
-    </div>
-    </div>
-    </div>
+
+   
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
     ! function(A, n, g, u, l, a, r) {
@@ -145,8 +155,8 @@
     </script>
     <script src="scripts/vendor.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="./src/datepicker/js/bootstrap-datepicker.min.js"></script>
-    <script src="./src/datepicker/locales/bootstrap-datepicker.es.min.js"></script>
+    <!--<script src="./src/datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="./src/datepicker/locales/bootstrap-datepicker.es.min.js"></script>-->
     <script src="scripts/scripts.js"></script>
     <!-- endbuild -->
 </body>
