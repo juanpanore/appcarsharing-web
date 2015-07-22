@@ -10,6 +10,7 @@
  */
 var appCarSharingAppModule = angular
     .module('appCarSharingApp', [
+        'ui.bootstrap',
         'ngAnimate',
         'ngCookies',
         'ngResource',
@@ -17,7 +18,6 @@ var appCarSharingAppModule = angular
         'ngSanitize',
         'ngTouch',
         'ngCookies',
-        'ui.bootstrap',
         'ng-bootstrap-datepicker'
     ]);
 
