@@ -5,7 +5,8 @@ var rewrite = require('connect-modrewrite');
 module.exports = function(app, dirname) {
 
   app.use(rewrite(['!\\.html|\\.js|\\.css|\\.png|\\.jp(e?)g|\\.gif|\\.txt|\\.xml|\\.pdf|\\.woff|\\.ttf|\\.ico|\\.svg\\w+($|\\?) /index.html']));
-  app.use(express.static(dirname + '/dist'));     
+  app.use(express.static(dirname + '/app')); 
+  app.use(express.static(dirname + '/bower_components'));     
   
   app.get('/', function(req, res) {
     res.sendfile(dirname + 'index.html');
