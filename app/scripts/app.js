@@ -17,8 +17,8 @@ var appCarSharingAppModule = angular
         'ngRoute',
         'ngSanitize',
         'ngTouch',
-        'ngCookies',
-        'ng-bootstrap-datepicker'
+        'ngCookies'
+ 
     ]);
 
 appCarSharingAppModule.factory('defaultInformation',
