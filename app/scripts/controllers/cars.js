@@ -1,105 +1,124 @@
 'use strict';
 
-var AVAILABLE_BRANDS = 'https://appcarsharing-api.herokuapp.com/rest/brand';
-
+/*var AVAILABLE_BRANDS = 'https://appcarsharing-api.herokuapp.com/rest/brand';
 var CARS_BY_USER = 'https://appcarsharing-api.herokuapp.com/rest/user/cars';
+var CARS = 'https://appcarsharing-api.herokuapp.com/rest/user';*/
 
-var USER = 'https://appcarsharing-api.herokuapp.com/rest/user';
-/*
 var CARS_BY_USER = 'http://localhost:8080/appcarsharing-api/rest/user/cars';
-
+var CARS = 'http://localhost:8080/appcarsharing-api/rest/user';
 var AVAILABLE_BRANDS ='http://localhost:8080/appcarsharing-api/rest/brand';
-
-var USER = 'http://localhost:8080/appcarsharing-api/rest/user';*/
 
 var userEmail = 'luismi@gmail.com';
 
 
 	
-/**
- * @ngdoc function
- * @name appCarSharingApp.controller:CarlistCtrl
- * @description
- * # CarlistCtrl
- * Controller of the appCarSharingApp
- */
-var appCarSharingAppModule = angular.module('appCarSharingApp');
+var appCarSharingModule = angular.module('appCarSharingApp');
 
-appCarSharingAppModule.controller('CarlistCtrl', function ($scope, carsByUserWebService, availableBrandsWebService) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-   
+appCarSharingModule
+		.controller(
+				'CarlistCtrl',
+				function($scope, carsByUserWebService,
+						availableBrandsWebService, addCarWebService) {
+					$scope.awesomeThings = [ 'HTML5 Boilerplate', 'AngularJS' ];
 
-    carsByUserWebService.findCarsByUser().success(function(data){
-    	$scope.carlist = data;
-    });
+					function clearData(){
+						$scope.carriagePlate = '';
+						$scope.brand = undefined;
+						$scope.model = '';
+						$scope.color = '';
+						$scope.capacity = 0;
+					}
 
-	availableBrandsWebService.findAllAvailableBrands().success(function(data){
-    	$scope.brandlist = data;
-    });
+					carsByUserWebService.findCarsByUser().success(
+							function(data) {
+								$scope.carlistByUser = data;
+							});
 
- 	$scope.addCar = function addCar() {
-	    	var newCar = {
-	            carriagePlate: $scope.carriagePlate,
-	            brand: {
-	            	brand: $scope.brand
-	            },
-	            model: $scope.model,
-	            color: $scope.color,
-	            capacity: $scope.capacity
-	        }
+					availableBrandsWebService.findAllAvailableBrands().success(
+							function(data) {
+								$scope.brandlist = data;
+							});
 
+					$scope.addCar = function addCar() {
+						if ($scope.carriagePlate == undefined
+								|| $scope.carriagePlate == ''
+								|| $scope.brand == undefined
+								|| $scope.brand == ''
+								|| $scope.model == undefined
+								|| $scope.model == ''
+								|| $scope.capacity == undefined
+								|| $scope.capacity == '') {
+							alert("Por favor ingrese todos los datos obligatorios y correctamente.");
 
+							return;
+						}
 
-	    	if(newCar!=null){
-		    	$scope.carlist.push(newCar);
-		        clearData()
-	    	}
-	    };
+						if (isNaN(parseInt($scope.capacity)
+								|| isFinite($scope.capacity))) {
+							alert("La capacidad debe ser un valor numérico.");
 
-	function clearData(){
-		  $scope.name='';
-		  $scope.memoryRAM=''; 
-		  $scope.processor=''; 
-		  $scope.internMemory=''; 
-		  $scope.year=0; 
-		  $scope.price=0;
-	}
-  });
+							return;
+						}
 
-appCarSharingAppModule.service('availableBrandsWebService', function($http) {
+						if ($scope.capacity <= 0) {
+							alert("La capacidad debe ser mayor que cero.");
+
+							return;
+						}
+
+						var newCar = {
+							carriagePlate : $scope.carriagePlate,
+							brand : {
+								brand : $scope.brand
+							},
+							model : $scope.model,
+							color : $scope.color,
+							capacity : $scope.capacity
+						}
+
+						if (newCar != null) {
+							addCarWebService.addCar(newCar).success(
+								function(data, status) {
+									if(status == 200){
+										$scope.carlistByUser = data.cars;
+										alert("Se ha agregado un nuevo carro satisfactoriamente.");
+										clearData();
+									} else {
+										alert("Se ha producido un error, por favor contactese con el administrador.");
+									}
+								});
+						}
+					};
+				});
+
+appCarSharingModule.service('availableBrandsWebService', function($http) {
 	this.findAllAvailableBrands = function() {
 
 		return ($http({
+			withCredentials : false,
 			method : 'GET',
-			url : AVAILABLE_BRANDS,
-			
+			url : AVAILABLE_BRANDS
 		}));
 	};
 });
 
-appCarSharingAppModule.service('carsByUserWebService', function($http) {
-	this.findCarsByUser = function() {	
+appCarSharingModule.service('carsByUserWebService', function($http) {
+	this.findCarsByUser = function() {
 		return ($http({
-			withCredentials: true,
+			withCredentials : false,
 			method : 'GET',
-			url : CARS_BY_USER + '/' + userEmail,
-			
+			url : CARS_BY_USER + '/' + userEmail
 		}));
 	};
 });
 
-appCarSharingAppModule.service('addCarWebService', function($http) {
+appCarSharingModule.service('addCarWebService', function($http) {
 	this.addCar = function(carJSON) {
 
 		return ($http({
-			method : 'POST',
+			method : 'PUT',
 			url : CARS + '/' + userEmail,
-			data : carJSON,
-			
+			data : carJSON
 		}));
 	};
 });
